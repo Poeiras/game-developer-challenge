@@ -2,7 +2,7 @@
 .sprite-button {
     position: relative;
     display: block;
-    width: min(320px, 70vw);
+    width: min(200px, 70vw);
     padding: 0;
     border: none;
     background: none;
@@ -18,8 +18,8 @@
     user-select: none;
 }
 
-
-.sprite-button__img--hover {
+.sprite-button__img--hover,
+.sprite-button__img--pressed {
     position: absolute;
     inset: 0;
     opacity: 0;
@@ -36,7 +36,35 @@
     opacity: 0;
 }
 
+/* pressionado: mouse apertado em cima do botão, ou Espaço/Enter com foco */
+.sprite-button:hover:active .sprite-button__img--pressed,
+.sprite-button:focus-visible:active .sprite-button__img--pressed {
+    opacity: 1;
+}
+
+.sprite-button:hover:active .sprite-button__img--hover,
+.sprite-button:focus-visible:active .sprite-button__img--hover {
+    opacity: 0;
+}
+
 /* feedback ao clicar */
-.sprite-button:active {
+.sprite-button:hover:active,
+.sprite-button:focus-visible:active {
     transform: scale(0.97);
+}
+
+.sprite-button__label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 8px;
+    box-sizing: border-box;
+    font-size: clamp(1.25rem, 6vw, 2rem);
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+    user-select: none;
 }

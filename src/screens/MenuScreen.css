@@ -36,9 +36,20 @@
 }
 
 .menu__title {
-    margin: 0;
-    font-size: clamp(32px, 8vw, 72px);
-    text-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(640px, 90vw);
+    aspect-ratio: 4 / 1;
+    margin: 0 0 clamp(16px, 4vh, 40px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    image-rendering: pixelated;
+    font-size: 0;
+    color: transparent;
+    text-shadow: none;
+    text-align: center;
 }
 
 .menu__buttons {
@@ -52,4 +63,15 @@
     margin: 0;
     opacity: 0.8;
     font-size: clamp(12px, 1.6vw, 16px);
+}
+
+.menu__panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(24px, 5vh, 48px) clamp(32px, 6vw, 64px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;   /* estica o painel para cobrir a área dos botões */
+    image-rendering: pixelated;
 }

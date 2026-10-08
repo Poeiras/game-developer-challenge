@@ -1,0 +1,61 @@
+/* src/components/HealthBar.css */
+.health-bar-container {
+    position: relative;
+    /* Dimensões exatas da sua imagem health_frame.png */
+    width: 256px;
+    height: 48px;
+
+    /* A imagem de fundo agora é definida via CSS */
+    background-image: url('../assets/png/default/ui/hud/health_frame.png');
+    background-size: 100% 100%; /* ou '256px 48px' para tamanho fixo */
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+}
+
+.health-fill-area {
+    position: absolute;
+    z-index: 2;
+
+    /* AJUSTE: Estes valores definem o recuo das bordas da sua moldura.
+       Ajuste até a barra colorida ficar perfeitamente dentro do frame. */
+    top: 12px;      /* Borda superior da moldura */
+    bottom: 12px;   /* Borda inferior da moldura */
+    left: 15px;     /* Borda esquerda da moldura */
+    right: 15px;    /* Borda direita da moldura */
+
+    overflow: hidden; /* Garante que a barra nunca ultrapasse este espaço */
+}
+
+.health-fill {
+    height: 100%;
+    transition: width 0.2s ease-out;
+    image-rendering: pixelated;
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.health-fill.health-green {
+    background-image: url('../assets/png/default/ui/hud/health_fill_green.png');
+}
+
+.health-fill.health-red {
+    background-image: url('../assets/png/default/ui/hud/health_fill_red.png');
+}
+
+.health-test-indicator {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2px 6px;
+    border-radius: 4px;
+    z-index: 3;
+}
