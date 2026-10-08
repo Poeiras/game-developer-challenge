@@ -1,0 +1,55 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* centraliza na horizontal */
+    justify-content: center;  /* centraliza na vertical */
+    gap: clamp(16px, 4vh, 40px);
+    padding: 24px;
+    text-align: center;
+    color: #fff;
+    font-family: system-ui, sans-serif;
+
+    background-color: #1099bb;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+
+/* camada escura sobre a imagem, para o texto ficar legível */
+.menu::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.1) 50%,
+            rgba(0, 0, 0, 0.4)
+    );
+    pointer-events: none;
+}
+
+/* mantém o conteúdo acima da camada escura */
+.menu > * {
+    position: relative;
+}
+
+.menu__title {
+    margin: 0;
+    font-size: clamp(32px, 8vw, 72px);
+    text-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.menu__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(12px, 3vh, 24px);
+}
+
+.menu__hint {
+    margin: 0;
+    opacity: 0.8;
+    font-size: clamp(12px, 1.6vw, 16px);
+}

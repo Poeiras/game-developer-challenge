@@ -1,0 +1,42 @@
+/* src/components/SpriteButton.css */
+.sprite-button {
+    position: relative;
+    display: block;
+    width: min(320px, 70vw);
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.sprite-button__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    user-select: none;
+}
+
+
+.sprite-button__img--hover {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+}
+
+/* mouse em cima OU foco pelo teclado: troca as imagens */
+.sprite-button:hover .sprite-button__img--hover,
+.sprite-button:focus-visible .sprite-button__img--hover {
+    opacity: 1;
+}
+
+.sprite-button:hover .sprite-button__img--normal,
+.sprite-button:focus-visible .sprite-button__img--normal {
+    opacity: 0;
+}
+
+/* feedback ao clicar */
+.sprite-button:active {
+    transform: scale(0.97);
+}
